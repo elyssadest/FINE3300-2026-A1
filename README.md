@@ -1,12 +1,12 @@
 # FINE3000-2026-A1
-FINE 3000 Assignment 1: Currency Converter USD to CAD using Bank of Canada exange rates 2025
-
 **FINE 3000 - Fall 2026**
 
-# USD/CAD Currency Converter 2025 Rate
+FINE 3000 Assignment 1: Currency Converter USD to CAD using Bank of Canada exchange rates
+
+# USD/CAD Currency Converter Using Latest Rate
 
 ## Description
-This code converts monirtary amounts between US dollars (USD) and Canadian dollars (CAD) using the latest rate.
+This code converts monirtary amounts between US dollars (USD) and Canadian dollars (CAD) and vice versa using the latest rate.
 
 ## How It Works:
 - Reads the Bank of Canada exchange rate file and takes the latest USD/CAD rate
