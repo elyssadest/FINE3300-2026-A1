@@ -36,7 +36,6 @@ Success! You have completed the conversion from $100,000.00 CAD to $71,540.99 US
 c) LLM Model and Prompts
 Model used: Microsoft Copilot, free version
 
-I used the free CoPilot application to complete the part 2 task.
 Prompts give: 
 1. (Uploaded the Bank of Canada exchange rate CSV file and the assignment file) "Use these files to complete the code of part 1 so I can do part 2."
 2. "Compile all codes into one to paste into my coding platform."
