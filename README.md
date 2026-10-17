@@ -47,7 +47,7 @@ My code uses the pandas library to load the file and retrieve the latest rate in
 As well, my class reads a fixed file name within the constructor, while Copilot’s class accepts the file name as a parameter, making it reusable with other exchange rate files.
 Copilot’s initial version did not prompt the user for an amount and was fixing the amount as 100,000 so an additional prompt was required to add user input.
 Copilot also included features beyond the assignment’s requirements, such as input validation despite the assignment stating that users would provide valid input.
-Its code also has the user interaction in an if "__name__ == __main__:"  section which is sperating the class definition from the program’s output.
+Its code also has the user interaction in an if "__name__ == __main__:"  section which is separating the class definition from the program’s output.
 Copilot’s code is approximately 60 lines long, compared to roughly 25 lines for mine, about 50% shorter.
 Ultimately, my code is more concise and easier to follow for the scope of this assignment.
 
