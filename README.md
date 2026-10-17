@@ -16,14 +16,15 @@ This code converts monirtary amounts between US dollars (USD) and Canadian dolla
 ## How to Use:
 Keep the CSV file in the same folder as the code, then run the program and answer the prompts accurately.
 
+
 ### Result of part 1 and 2:
-a) Link to GitHub repository:
+a) Link to GitHub repository: https://github.com/elyssadest/FINE3000-2026-A1
 
 b) Output of my code:
 USD to CAD: Success! You have completed the conversion from $ 100000.0 USD to $ 139780.0 CAD
 CAD to USD: Success! You have completed the conversion from $ 100000.0 CAD to $ 71540.99 USD
 
-c) I used the free CoPilot to complete the part 2 task.
+c) I used the free CoPilot application to complete the part 2 task.
 Prompts give: 
 - (included the .csv file of exchange rate and the file containing the assigment)
 - Use these files to complete the code of part 1 so i can do part 2.

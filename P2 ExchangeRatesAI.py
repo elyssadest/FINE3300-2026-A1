@@ -24,15 +24,13 @@ class ExchangeRates:
             reader = csv.DictReader(f)
             last_row = None
 
-            # Iterate through all rows; the last one will be the latest rate
-            for row in reader:
+            for row in reader: # Iterate through all rows; the last one will be the latest rate
                 last_row = row
 
             if last_row is None:
                 raise ValueError("No data rows found in the exchange rate file.")
 
-            # FXAUSDCAD is Canadian dollars per 1 US dollar
-            self.usd_to_cad_rate = float(last_row["FXAUSDCAD"])
+            self.usd_to_cad_rate = float(last_row["FXAUSDCAD"]) # FXAUSDCAD is Canadian dollars per 1 US dollar
 
     def convert(self, amount, from_currency, to_currency):
         """
@@ -45,55 +43,41 @@ class ExchangeRates:
         from_currency = from_currency.upper()
         to_currency = to_currency.upper()
 
-        # Same currency: no conversion needed
-        if from_currency == to_currency:
+        if from_currency == to_currency: # Same currency: no conversion needed
             return amount
 
-        # USD to CAD: multiply by rate
-        if from_currency == "USD" and to_currency == "CAD":
+        if from_currency == "USD" and to_currency == "CAD": # USD to CAD: multiply by rate
             return amount * self.usd_to_cad_rate
 
-        # CAD to USD: divide by rate
-        if from_currency == "CAD" and to_currency == "USD":
+        if from_currency == "CAD" and to_currency == "USD": # CAD to USD: divide by rate
             return amount / self.usd_to_cad_rate
 
-        # If currencies are not USD or CAD, raise an error
-        raise ValueError("Supported currencies are only USD and CAD.")
+        raise ValueError("Supported currencies are only USD and CAD.") # If currencies are not USD or CAD, raise an error
 
 
-if __name__ == "__main__":
-    # Main block: interact with the user
+if __name__ == "__main__":  # Main block: interact with the user
 
-    # Create an ExchangeRates object using the Bank of Canada CSV file
-    rates = ExchangeRates("BankOfCanadaExchangeRate.2026.csv")
+    rates = ExchangeRates("BankOfCanadaExchangeRate.2026.csv") # Create an ExchangeRates object using the Bank of Canada CSV file
 
-    # Ask the user for the amount to convert
-    amount_str = input("Enter the amount you want to convert: ").strip()
+    amount_str = input("Enter the amount you want to convert: ").strip() # Ask the user for the amount to convert
 
     try:
-        # Convert the input string to a float
-        amount = float(amount_str)
+        amount = float(amount_str) # Convert the input string to a float
     except ValueError:
         print("Invalid amount. Please enter a numeric value.")
         exit(1)
 
-    # Ask the user for the currency to convert from (USD or CAD)
-    from_currency = input("Convert FROM (USD or CAD): ").strip().upper()
+    from_currency = input("Convert FROM (USD or CAD): ").strip().upper() # Ask the user for the currency to convert from (USD or CAD)
 
-    # Ask the user for the currency to convert to (USD or CAD)
-    to_currency = input("Convert TO (USD or CAD): ").strip().upper()
+    to_currency = input("Convert TO (USD or CAD): ").strip().upper() # Ask the user for the currency to convert to (USD or CAD)
 
     try:
-        # Perform the conversion using the convert method
-        result = rates.convert(amount, from_currency, to_currency)
+        result = rates.convert(amount, from_currency, to_currency) # Perform the conversion using the convert method
     except ValueError as e:
-        # Handle unsupported currency or other conversion errors
-        print(f"Error: {e}")
+        print(f"Error: {e}")  # Handle unsupported currency or other conversion errors
         exit(1)
 
-    # Format the amounts with dollar signs, commas, and 2 decimal places
-    formatted_input = f"${amount:,.2f} {from_currency}"
+    formatted_input = f"${amount:,.2f} {from_currency}" # Format the amounts with dollar signs, commas, and 2 decimal places
     formatted_output = f"${result:,.2f} {to_currency}"
 
-    # Print the final result in the required format
-    print(f"{formatted_input} = {formatted_output}")
+    print(f"{formatted_input} = {formatted_output}")  # Print the final result in the required format
